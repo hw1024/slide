@@ -1,10 +1,10 @@
 jQuery(document).ready(function($){
 	var	scrolling = false;
-	var contentSections = $('.cd-section'),
-		verticalNavigation = $('.cd-vertical-nav'),
+	var contentSections = $('.hw-section'),
+		verticalNavigation = $('.hw-vertical-nav'),
 		navigationItems = verticalNavigation.find('a'),
-		navTrigger = $('.cd-nav-trigger'),
-		scrollArrow = $('.cd-scroll-down');
+		navTrigger = $('.hw-nav-trigger'),
+		scrollArrow = $('.hw-scroll-down');
 
 	$(window).on('scroll', checkScroll);
 
@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
         smoothScroll($(this.hash));
     });
 
-	// open navigation if user clicks the .cd-nav-trigger - small devices only
+	// open navigation if user clicks the .hw-nav-trigger - small devices only
     navTrigger.on('click', function(event){
     	event.preventDefault();
     	verticalNavigation.toggleClass('open');

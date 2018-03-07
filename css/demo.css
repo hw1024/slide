@@ -1,16 +1,9 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
 *, *::after, *::before {
   box-sizing: border-box;
 }
-
 html {
   font-size: 62.5%;
 }
-
 body {
   font-size: 1.6rem;
   font-family: "Sintony", sans-serif;
@@ -19,27 +12,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 a {
   color: #c0a672;
   text-decoration: none;
 }
-
-.cd-image-replace {
-  /* replace text with image */
+.hw-image-replace {
   display: inline-block;
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
   color: transparent;
 }
-
-/* -------------------------------- 
-
-Navigation trigger - visible on small devices only
-
--------------------------------- */
-.cd-nav-trigger {
+.hw-nav-trigger {
   display: block;
   position: fixed;
   z-index: 2;
@@ -49,7 +33,6 @@ Navigation trigger - visible on small devices only
   width: 44px;
   border-radius: 0.25em;
   background: rgba(234, 242, 227, 0.9);
-  /* reset button style */
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -59,8 +42,7 @@ Navigation trigger - visible on small devices only
   border: none;
   outline: none;
 }
-.cd-nav-trigger span {
-  /* central dot */
+.hw-nav-trigger span {
   position: absolute;
   height: 4px;
   width: 4px;
@@ -76,8 +58,7 @@ Navigation trigger - visible on small devices only
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
-.cd-nav-trigger span::before, .cd-nav-trigger span::after {
-  /* bottom and top dots */
+.hw-nav-trigger span::before, .hw-nav-trigger span::after {
   content: '';
   position: absolute;
   left: 0;
@@ -86,24 +67,18 @@ Navigation trigger - visible on small devices only
   background-color: #3a2c41;
   border-radius: inherit;
 }
-.cd-nav-trigger span::before {
+.hw-nav-trigger span::before {
   top: -9px;
 }
-.cd-nav-trigger span::after {
+.hw-nav-trigger span::after {
   bottom: -9px;
 }
 @media only screen and (min-width: 800px) {
-  .cd-nav-trigger {
+  .hw-nav-trigger {
     display: none;
   }
 }
-
-/* -------------------------------- 
-
-Vertical navigation
-
--------------------------------- */
-.cd-vertical-nav {
+.hw-vertical-nav {
   position: fixed;
   z-index: 1;
   right: 5%;
@@ -128,17 +103,17 @@ Vertical navigation
   border-radius: 0.25em;
   background-color: rgba(234, 242, 227, 0.9);
 }
-.cd-vertical-nav a {
+.hw-vertical-nav a {
   display: block;
   padding: 1em;
   color: #3a2c41;
   font-weight: bold;
   border-bottom: 1px solid rgba(58, 44, 65, 0.1);
 }
-.cd-vertical-nav a.active {
+.hw-vertical-nav a.active {
   color: #c0a672;
 }
-.cd-vertical-nav.open {
+.hw-vertical-nav.open {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
@@ -146,20 +121,19 @@ Vertical navigation
   transform: scale(1);
   -webkit-overflow-scrolling: touch;
 }
-.cd-vertical-nav.open + .cd-nav-trigger {
+.hw-vertical-nav.open + .hw-nav-trigger {
   background-color: transparent;
 }
-.cd-vertical-nav.open + .cd-nav-trigger span {
+.hw-vertical-nav.open + .hw-nav-trigger span {
   background-color: rgba(58, 44, 65, 0);
 }
-.cd-vertical-nav.open + .cd-nav-trigger span::before, .cd-vertical-nav.open + .cd-nav-trigger span::after {
-  /* transform dots in 'X' icon */
+.hw-vertical-nav.open + .hw-nav-trigger span::before, .hw-vertical-nav.open + .hw-nav-trigger span::after {
   height: 3px;
   width: 20px;
   border-radius: 0;
   left: -8px;
 }
-.cd-vertical-nav.open + .cd-nav-trigger span::before {
+.hw-vertical-nav.open + .hw-nav-trigger span::before {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -167,7 +141,7 @@ Vertical navigation
   transform: rotate(45deg);
   top: 1px;
 }
-.cd-vertical-nav.open + .cd-nav-trigger span::after {
+.hw-vertical-nav.open + .hw-nav-trigger span::after {
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
@@ -176,8 +150,7 @@ Vertical navigation
   bottom: 0;
 }
 @media only screen and (min-width: 800px) {
-  .cd-vertical-nav {
-    /* reset style */
+  .hw-vertical-nav {
     right: 0;
     top: 0;
     bottom: auto;
@@ -191,11 +164,9 @@ Vertical navigation
     -o-transform: scale(1);
     transform: scale(1);
     background-color: transparent;
-    /* vertically align its content*/
     display: table;
   }
-  .cd-vertical-nav::before {
-    /* this is the navigation background */
+  .hw-vertical-nav::before {
     content: '';
     position: absolute;
     top: 0;
@@ -212,20 +183,19 @@ Vertical navigation
     -moz-transition: -moz-transform 0.4s;
     transition: transform 0.4s;
   }
-  .no-touch .cd-vertical-nav:hover::before, .touch .cd-vertical-nav::before {
+  .no-touch .hw-vertical-nav:hover::before, .touch .hw-vertical-nav::before {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
     transform: translateX(0);
   }
-  .cd-vertical-nav ul {
-    /* vertically align <ul> inside <nav>*/
+  .hw-vertical-nav ul {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
   }
-  .cd-vertical-nav a {
+  .hw-vertical-nav a {
     position: relative;
     padding: 3em 0 0;
     margin: 1.4em auto;
@@ -233,15 +203,13 @@ Vertical navigation
     font-size: 1.2rem;
     color: #eaf2e3;
   }
-  .cd-vertical-nav a.active {
+  .hw-vertical-nav a.active {
     color: #eaf2e3;
   }
-  .cd-vertical-nav a::before, .cd-vertical-nav a::after {
-    /* used to create the filled circle and the background icon */
+  .hw-vertical-nav a::before, .hw-vertical-nav a::after {
     content: '';
     position: absolute;
     left: 50%;
-    /* Force Hardware Acceleration */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform: translateZ(0);
@@ -250,8 +218,7 @@ Vertical navigation
     -o-transform: translateZ(0);
     transform: translateZ(0);
   }
-  .cd-vertical-nav a::before {
-    /* filled circle */
+  .hw-vertical-nav a::before {
     top: 0;
     height: 32px;
     width: 32px;
@@ -266,13 +233,12 @@ Vertical navigation
     -moz-transition: -moz-transform 0.4s, background-color 0.2s;
     transition: transform 0.4s, background-color 0.2s;
   }
-  .cd-vertical-nav a::after {
-    /* icon */
+  .hw-vertical-nav a::after {
     opacity: 0;
     top: 8px;
     height: 16px;
     width: 16px;
-    background: url(../img/cd-nav-icons.svg) no-repeat;
+    background: url(../img/hw-nav-icons.svg) no-repeat;
     -webkit-transform: translateX(-50%) scale(0);
     -moz-transform: translateX(-50%) scale(0);
     -ms-transform: translateX(-50%) scale(0);
@@ -282,27 +248,25 @@ Vertical navigation
     -moz-transition: -moz-transform 0.4s 0s, opacity 0.1s 0.3s;
     transition: transform 0.4s 0s, opacity 0.1s 0.3s;
   }
-  .cd-vertical-nav a.active::before, .no-touch .cd-vertical-nav a:hover::before {
+  .hw-vertical-nav a.active::before, .no-touch .hw-vertical-nav a:hover::before {
     background-color: #c0a672;
   }
-  .cd-vertical-nav li:first-of-type a::after {
-    /* change icon using image sprites */
+  .hw-vertical-nav li:first-of-type a::after {
     background-position: 0px -48px;
-    /* fix bug with transitions - set scale(0.01) rather than scale(0) */
     -webkit-transform: translateX(-50%) translateY(4.5em) scale(0.01);
     -moz-transform: translateX(-50%) translateY(4.5em) scale(0.01);
     -ms-transform: translateX(-50%) translateY(4.5em) scale(0.01);
     -o-transform: translateX(-50%) translateY(4.5em) scale(0.01);
     transform: translateX(-50%) translateY(4.5em) scale(0.01);
   }
-  .cd-vertical-nav li:first-of-type a::before {
+  .hw-vertical-nav li:first-of-type a::before {
     -webkit-transform: translateX(-50%) translateY(4.5em) scale(0.25);
     -moz-transform: translateX(-50%) translateY(4.5em) scale(0.25);
     -ms-transform: translateX(-50%) translateY(4.5em) scale(0.25);
     -o-transform: translateX(-50%) translateY(4.5em) scale(0.25);
     transform: translateX(-50%) translateY(4.5em) scale(0.25);
   }
-  .cd-vertical-nav li:nth-of-type(2) a::after {
+  .hw-vertical-nav li:nth-of-type(2) a::after {
     background-position: 0px -32px;
     -webkit-transform: translateX(-50%) translateY(1.5em) scale(0.01);
     -moz-transform: translateX(-50%) translateY(1.5em) scale(0.01);
@@ -310,14 +274,14 @@ Vertical navigation
     -o-transform: translateX(-50%) translateY(1.5em) scale(0.01);
     transform: translateX(-50%) translateY(1.5em) scale(0.01);
   }
-  .cd-vertical-nav li:nth-of-type(2) a::before {
+  .hw-vertical-nav li:nth-of-type(2) a::before {
     -webkit-transform: translateX(-50%) translateY(1.5em) scale(0.25);
     -moz-transform: translateX(-50%) translateY(1.5em) scale(0.25);
     -ms-transform: translateX(-50%) translateY(1.5em) scale(0.25);
     -o-transform: translateX(-50%) translateY(1.5em) scale(0.25);
     transform: translateX(-50%) translateY(1.5em) scale(0.25);
   }
-  .cd-vertical-nav li:nth-of-type(3) a::after {
+  .hw-vertical-nav li:nth-of-type(3) a::after {
     background-position: 0px -16px;
     -webkit-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
     -moz-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
@@ -325,14 +289,14 @@ Vertical navigation
     -o-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
     transform: translateX(-50%) translateY(-1.5em) scale(0.01);
   }
-  .cd-vertical-nav li:nth-of-type(3) a::before {
+  .hw-vertical-nav li:nth-of-type(3) a::before {
     -webkit-transform: translateX(-50%) translateY(-1.5em) scale(0.25);
     -moz-transform: translateX(-50%) translateY(-1.5em) scale(0.25);
     -ms-transform: translateX(-50%) translateY(-1.5em) scale(0.25);
     -o-transform: translateX(-50%) translateY(-1.5em) scale(0.25);
     transform: translateX(-50%) translateY(-1.5em) scale(0.25);
   }
-  .cd-vertical-nav li:nth-of-type(4) a::after {
+  .hw-vertical-nav li:nth-of-type(4) a::after {
     background-position: 0px 0px;
     -webkit-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
     -moz-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
@@ -340,16 +304,15 @@ Vertical navigation
     -o-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
     transform: translateX(-50%) translateY(-4.5em) scale(0.01);
   }
-  .cd-vertical-nav li:nth-of-type(4) a::before {
+  .hw-vertical-nav li:nth-of-type(4) a::before {
     -webkit-transform: translateX(-50%) translateY(-4.5em) scale(0.25);
     -moz-transform: translateX(-50%) translateY(-4.5em) scale(0.25);
     -ms-transform: translateX(-50%) translateY(-4.5em) scale(0.25);
     -o-transform: translateX(-50%) translateY(-4.5em) scale(0.25);
     transform: translateX(-50%) translateY(-4.5em) scale(0.25);
   }
-  .cd-vertical-nav .label {
+  .hw-vertical-nav .label {
     display: block;
-    /* Force Hardware Acceleration */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform: translateZ(0);
@@ -366,7 +329,7 @@ Vertical navigation
     -moz-transition: -moz-transform 0.4s;
     transition: transform 0.4s;
   }
-  .no-touch .cd-vertical-nav:hover a::before, .no-touch .cd-vertical-nav:hover a::after, .touch .cd-vertical-nav li:nth-of-type(n) a::before, .touch .cd-vertical-nav li:nth-of-type(n) a::after {
+  .no-touch .hw-vertical-nav:hover a::before, .no-touch .hw-vertical-nav:hover a::after, .touch .hw-vertical-nav li:nth-of-type(n) a::before, .touch .hw-vertical-nav li:nth-of-type(n) a::after {
     -webkit-transform: translateX(-50%) scale(1);
     -moz-transform: translateX(-50%) scale(1);
     -ms-transform: translateX(-50%) scale(1);
@@ -375,13 +338,13 @@ Vertical navigation
     /* set a rotation to fix bug on Firefox - http://gielberkers.com/how-to-fix-shaking-css-transitions-in-firefox/ */
     -moz-transform: translateX(-50%) scale(1) rotate(0.02deg);
   }
-  .no-touch .cd-vertical-nav:hover a::after, .touch .cd-vertical-nav a::after {
+  .no-touch .hw-vertical-nav:hover a::after, .touch .hw-vertical-nav a::after {
     opacity: 1;
     -webkit-transition: -webkit-transform 0.4s, opacity 0s;
     -moz-transition: -moz-transform 0.4s, opacity 0s;
     transition: transform 0.4s, opacity 0s;
   }
-  .no-touch .cd-vertical-nav:hover .label, .touch .cd-vertical-nav .label {
+  .no-touch .hw-vertical-nav:hover .label, .touch .hw-vertical-nav .label {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -395,33 +358,33 @@ Vertical navigation
 Content Sections - basic style
 
 -------------------------------- */
-.cd-section {
+.hw-section {
   /* vertically align its content*/
   display: table;
   width: 100%;
   height: 100vh;
   background: #3a2c41;
 }
-.cd-section:nth-of-type(even) {
+.hw-section:nth-of-type(even) {
   background-color: #70557e;
 }
-.cd-section > div {
+.hw-section > div {
   /* vertically align <div> inside <section> */
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
-.cd-section h1, .cd-section h2 {
+.hw-section h1, .hw-section h2 {
   width: 90%;
   margin: 0 auto;
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.4;
 }
-.cd-section h1 b, .cd-section h2 b {
+.hw-section h1 b, .hw-section h2 b {
   color: #584c5e;
 }
-.cd-section p {
+.hw-section p {
   margin: 1em auto 0;
   line-height: 1.6;
   width: 90%;
@@ -429,15 +392,15 @@ Content Sections - basic style
   color: rgba(234, 242, 227, 0.6);
 }
 @media only screen and (min-width: 800px) {
-  .cd-section h1, .cd-section h2 {
+  .hw-section h1, .hw-section h2 {
     font-size: 3rem;
   }
-  .cd-section p {
+  .hw-section p {
     font-size: 2rem;
   }
 }
 
-.cd-scroll-down {
+.hw-scroll-down {
   position: absolute;
   left: 50%;
   right: auto;
@@ -457,11 +420,11 @@ Content Sections - basic style
 no-js
 
 -------------------------------- */
-.no-js .cd-nav-trigger {
+.no-js .hw-nav-trigger {
   display: none;
 }
 
-.no-js .cd-vertical-nav {
+.no-js .hw-vertical-nav {
   position: static;
   height: auto;
   width: 100%;
@@ -474,30 +437,30 @@ no-js
   -o-transform: scale(1);
   transform: scale(1);
 }
-.no-js .cd-vertical-nav::before {
+.no-js .hw-vertical-nav::before {
   display: none;
 }
-.no-js .cd-vertical-nav ul::after {
+.no-js .hw-vertical-nav ul::after {
   clear: both;
   content: "";
   display: table;
 }
-.no-js .cd-vertical-nav li {
+.no-js .hw-vertical-nav li {
   display: inline-block;
   float: left;
 }
-.no-js .cd-vertical-nav a {
+.no-js .hw-vertical-nav a {
   padding: 0 1em;
   margin: 1.5em 1em;
   color: #eaf2e3;
 }
-.no-js .cd-vertical-nav a.active {
+.no-js .hw-vertical-nav a.active {
   color: #c0a672;
 }
-.no-js .cd-vertical-nav a::after, .no-js .cd-vertical-nav a::before {
+.no-js .hw-vertical-nav a::after, .no-js .hw-vertical-nav a::before {
   display: none;
 }
-.no-js .cd-vertical-nav .label {
+.no-js .hw-vertical-nav .label {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
